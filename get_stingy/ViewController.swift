@@ -88,6 +88,7 @@ extension ViewController: UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //		let cell = tableView.cellForRow(at: indexPath)
+		tableView.deselectRow(at: indexPath, animated: true)
 		
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 		let destination = storyboard.instantiateViewController(withIdentifier: "EventDetailViewController") as! EventDetailViewController

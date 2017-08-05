@@ -107,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="146" y="107"/>
+            <point key="canvasLocation" x="276" y="57"/>
         </scene>
         <!--Get Stingy-->
         <scene sceneID="jaF-t4-dRe">
@@ -152,8 +152,8 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpY-my-ueP">
-                                                <rect key="frame" x="8" y="283.5" width="359" height="426.5"/>
-                                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu vestibulum quam, eu elementum metus. Ut dictum ex eu fermentum rutrum. Aenean dictum dolor vel nunc feugiat, ornare venenatis nulla porttitor. Donec laoreet, erat non ornare fermentum, arcu purus finibus diam, posuere convallis purus nulla eu ante. Etiam blandit vitae massa at dapibus. Nullam eget ultrices tellus, quis ultricies erat. Nullam eleifend sed lorem quis finibus. Aenean lobortis, mauris vestibulum consequat suscipit, tortor tellus bibendum dolor, sed consectetur massa justo at purus. Cras sed augue nulla. Donec a lectus enim. Aenean tincidunt ornare quam sed bibendum. Aenean nec odio ac eros aliquam pretium. Aliquam commodo nisl a elementum faucibus. Praesent dignissim est sit amet nunc rhoncus mollis vel sed risus. Fusce eget cursus lorem, vulputate ornare nibh. Integer id magna quis tortor luctus iaculis.</mutableString>
+                                                <rect key="frame" x="8" y="283.5" width="359" height="101.5"/>
+                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu vestibulum quam, eu elementum metus. Ut dictum ex eu fermentum rutrum. Aenean dictum dolor vel nunc feugiat, ornare venenatis nulla porttitor.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -165,9 +165,57 @@
                                                 </constraints>
                                                 <state key="normal" title="Fave"/>
                                             </button>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rOO-P9-kNf">
+                                                <rect key="frame" x="0.0" y="401" width="375" height="266"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="3VP-cM-Y45">
+                                                    <size key="itemSize" width="100" height="100"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventMediaCell" id="dv7-Tl-dOC" customClass="EventMediaCollectionViewCell" customModule="get_stingy" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bca-xF-P2K">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                                    <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </view>
+                                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="Bca-xF-P2K" secondAttribute="bottom" id="0Qn-p9-Vj5"/>
+                                                            <constraint firstItem="Bca-xF-P2K" firstAttribute="leading" secondItem="dv7-Tl-dOC" secondAttribute="leading" id="h7X-9P-LJO"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Bca-xF-P2K" secondAttribute="trailing" id="l1w-ri-VmK"/>
+                                                            <constraint firstItem="Bca-xF-P2K" firstAttribute="top" secondItem="dv7-Tl-dOC" secondAttribute="top" id="yv2-zX-bbh"/>
+                                                        </constraints>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Rk-8I-Nk8">
+                                                <rect key="frame" x="0.0" y="559" width="375" height="44"/>
+                                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <items>
+                                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="YIu-tR-7hY"/>
+                                                    <barButtonItem title="Camera" systemItem="camera" id="een-eO-sU5">
+                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </barButtonItem>
+                                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oHr-cb-u3s"/>
+                                                </items>
+                                                <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="barTintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </toolbar>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="6Rk-8I-Nk8" firstAttribute="leading" secondItem="Fde-Kd-xMR" secondAttribute="leading" id="01b-gy-d3S"/>
+                                            <constraint firstAttribute="trailing" secondItem="rOO-P9-kNf" secondAttribute="trailing" id="2v7-8U-DfI"/>
                                             <constraint firstAttribute="trailing" secondItem="7KY-xz-wQP" secondAttribute="trailing" constant="24" id="5lI-Tg-bM7"/>
                                             <constraint firstItem="mP0-xD-HLY" firstAttribute="top" secondItem="91v-be-8Hb" secondAttribute="bottom" constant="16" id="6a9-MZ-0zA"/>
                                             <constraint firstItem="hwB-Aa-jf0" firstAttribute="leading" secondItem="bsC-MA-pkV" secondAttribute="leading" id="73U-Ep-Qi1"/>
@@ -179,10 +227,14 @@
                                             <constraint firstItem="OpY-my-ueP" firstAttribute="top" secondItem="hwB-Aa-jf0" secondAttribute="bottom" constant="8" id="Mhb-Bw-sc9"/>
                                             <constraint firstAttribute="trailing" secondItem="91v-be-8Hb" secondAttribute="trailing" id="OVJ-oU-r7d"/>
                                             <constraint firstItem="bsC-MA-pkV" firstAttribute="leading" secondItem="mP0-xD-HLY" secondAttribute="leading" id="ZiX-Yv-bnk"/>
+                                            <constraint firstItem="rOO-P9-kNf" firstAttribute="top" secondItem="OpY-my-ueP" secondAttribute="bottom" constant="16" id="dcf-Ld-UMz"/>
                                             <constraint firstItem="7KY-xz-wQP" firstAttribute="leading" secondItem="mP0-xD-HLY" secondAttribute="trailing" constant="24" id="dxa-oC-HSU"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Rk-8I-Nk8" secondAttribute="trailing" id="guD-eK-jfS"/>
                                             <constraint firstItem="91v-be-8Hb" firstAttribute="top" secondItem="Fde-Kd-xMR" secondAttribute="top" id="hHL-6j-QM0"/>
+                                            <constraint firstItem="rOO-P9-kNf" firstAttribute="leading" secondItem="Fde-Kd-xMR" secondAttribute="leading" id="hTJ-G1-ZZS"/>
                                             <constraint firstItem="7KY-xz-wQP" firstAttribute="bottom" secondItem="mP0-xD-HLY" secondAttribute="bottom" id="inJ-QB-cmo"/>
                                             <constraint firstItem="bsC-MA-pkV" firstAttribute="top" secondItem="mP0-xD-HLY" secondAttribute="bottom" constant="8" id="jYV-S2-HtI"/>
+                                            <constraint firstAttribute="bottom" secondItem="rOO-P9-kNf" secondAttribute="bottom" id="l6e-dj-Y7K"/>
                                             <constraint firstAttribute="trailing" secondItem="bsC-MA-pkV" secondAttribute="trailing" constant="8" id="r06-sN-DQB"/>
                                             <constraint firstItem="hwB-Aa-jf0" firstAttribute="trailing" secondItem="bsC-MA-pkV" secondAttribute="trailing" id="vbY-Kv-5zc"/>
                                             <constraint firstItem="7KY-xz-wQP" firstAttribute="top" secondItem="mP0-xD-HLY" secondAttribute="top" id="xy2-MU-cVF"/>
@@ -205,13 +257,17 @@
                             <constraint firstAttribute="trailing" secondItem="gR0-V2-xoE" secondAttribute="trailing" id="Wwk-mW-kEJ"/>
                             <constraint firstItem="uri-QN-44e" firstAttribute="top" secondItem="gR0-V2-xoE" secondAttribute="bottom" id="hyQ-lA-wgg"/>
                             <constraint firstItem="Fde-Kd-xMR" firstAttribute="height" secondItem="PEe-aK-3w1" secondAttribute="height" id="mZ3-Ox-vsG"/>
+                            <constraint firstItem="uri-QN-44e" firstAttribute="top" secondItem="6Rk-8I-Nk8" secondAttribute="bottom" id="riG-Y8-FuG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Get Stingy" id="eLr-o5-bQA"/>
+                    <connections>
+                        <outlet property="eventMediaCollectionView" destination="rOO-P9-kNf" id="XNN-EQ-SGF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SlI-d0-Lny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="107"/>
+            <point key="canvasLocation" x="1049" y="57"/>
         </scene>
     </scenes>
 </document>

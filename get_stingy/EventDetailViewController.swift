@@ -8,12 +8,17 @@
 
 import UIKit
 
-class EventDetailViewController: UIViewController {
-
+class EventDetailViewController: UIViewController, UICollectionViewDelegate {
+	@IBOutlet weak var eventMediaCollectionView: UICollectionView!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+			
+			eventMediaCollectionView.delegate = self
+			eventMediaCollectionView.dataSource = self
+			
 			//Modify Nav Bar
 			let nav = self.navigationController?.navigationBar
 			
@@ -37,4 +42,20 @@ class EventDetailViewController: UIViewController {
     }
     */
 
+}
+
+extension EventDetailViewController: UICollectionViewDataSource {
+	@available(iOS 6.0, *)
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return 9;
+	}
+	
+	@available(iOS 6.0, *)
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventMediaCell", for: indexPath) as! EventMediaCollectionViewCell
+		
+		return cell;
+	}
+	
+	
 }
