@@ -168,7 +168,8 @@
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rOO-P9-kNf">
                                                 <rect key="frame" x="0.0" y="401" width="375" height="266"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="3VP-cM-Y45">
+                                                <inset key="scrollIndicatorInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="3" id="3VP-cM-Y45">
                                                     <size key="itemSize" width="100" height="100"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -205,6 +206,9 @@
                                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="YIu-tR-7hY"/>
                                                     <barButtonItem title="Camera" systemItem="camera" id="een-eO-sU5">
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <action selector="eventMediaCapture:" destination="mTw-cX-Mo3" id="MHC-0d-k8y"/>
+                                                        </connections>
                                                     </barButtonItem>
                                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="oHr-cb-u3s"/>
                                                 </items>
@@ -262,6 +266,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Get Stingy" id="eLr-o5-bQA"/>
                     <connections>
+                        <outlet property="eventMediaCameraButton" destination="een-eO-sU5" id="GUm-Dm-7hg"/>
                         <outlet property="eventMediaCollectionView" destination="rOO-P9-kNf" id="XNN-EQ-SGF"/>
                     </connections>
                 </viewController>

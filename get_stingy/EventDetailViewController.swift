@@ -8,8 +8,10 @@
 
 import UIKit
 
-class EventDetailViewController: UIViewController, UICollectionViewDelegate {
+class EventDetailViewController: UIViewController, UICollectionViewDelegate, UIImagePickerControllerDelegate,
+UINavigationControllerDelegate {
 	@IBOutlet weak var eventMediaCollectionView: UICollectionView!
+	@IBOutlet weak var eventMediaCameraButton: UIBarButtonItem!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,20 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+	@IBAction func eventMediaCapture(_ sender: Any) {
+		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+			let imagePicker = UIImagePickerController()
+			imagePicker.delegate = self
+			imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+			imagePicker.allowsEditing = true
+			self.present(imagePicker, animated: true, completion: nil)
+		}
+	}
+	
+	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+		self.dismiss(animated: true, completion: nil);
+	}
+	
     /*
     // MARK: - Navigation
 
