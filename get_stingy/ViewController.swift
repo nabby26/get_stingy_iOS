@@ -22,8 +22,13 @@ class ViewController: UIViewController, UITableViewDelegate {
 		eventTable.delegate = self
 		eventTable.dataSource = self
 		
+		eventMapView.isZoomEnabled = true
+		eventMapView.isPitchEnabled = true
+		eventMapView.isScrollEnabled = true
+		
 		let initialLocation = CLLocation(latitude: -37.8136, longitude: 144.9631)
 		centerMapOnLocation(location: initialLocation)
+		displayAnnotations()
 		
 	}
 
@@ -36,6 +41,20 @@ class ViewController: UIViewController, UITableViewDelegate {
 		let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
 		                                                          regionRadius, regionRadius)
 		eventMapView.setRegion(coordinateRegion, animated: true)
+	}
+	
+	func displayAnnotations() {
+		let annotation_1 = EventAnnotation(title: "ABC",
+		                                   subtitle: "Some Cafe",
+		                                   coordinate: CLLocationCoordinate2D(latitude: -37.8231, longitude: 144.9693))
+		let annotation_2 = EventAnnotation(title: "DEF",
+		                                   subtitle: "Some Bar",
+		                                   coordinate: CLLocationCoordinate2D(latitude: -37.8194, longitude: 144.9348))
+		
+		let annotations = [annotation_1,annotation_2]
+		
+		eventMapView.addAnnotations(annotations)
+		
 	}
 	
 }

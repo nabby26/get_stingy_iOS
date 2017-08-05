@@ -21,6 +21,9 @@
 		C4F39C4D1F35DA7C0000804C /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F39C491F35DA7C0000804C /* EventTableViewCell.xib */; };
 		C4F39C4E1F35DA7C0000804C /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F39C491F35DA7C0000804C /* EventTableViewCell.xib */; };
 		C4F39C4F1F35DA7C0000804C /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F39C491F35DA7C0000804C /* EventTableViewCell.xib */; };
+		C4F39C511F35E6700000804C /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F39C501F35E6700000804C /* EventAnnotation.swift */; };
+		C4F39C521F35E6700000804C /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F39C501F35E6700000804C /* EventAnnotation.swift */; };
+		C4F39C531F35E6700000804C /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F39C501F35E6700000804C /* EventAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,7 @@
 		C4F39C281F35BE3D0000804C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4F39C481F35DA7C0000804C /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		C4F39C491F35DA7C0000804C /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
+		C4F39C501F35E6700000804C /* EventAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 				C4F39C0A1F35BE3D0000804C /* get_stingy.xcdatamodeld */,
 				C4F39C481F35DA7C0000804C /* EventTableViewCell.swift */,
 				C4F39C491F35DA7C0000804C /* EventTableViewCell.xib */,
+				C4F39C501F35E6700000804C /* EventAnnotation.swift */,
 			);
 			path = get_stingy;
 			sourceTree = "<group>";
@@ -206,13 +211,16 @@
 				TargetAttributes = {
 					C4F39BFF1F35BE3D0000804C = {
 						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
 					};
 					C4F39C161F35BE3D0000804C = {
 						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Manual;
 						TestTargetID = C4F39BFF1F35BE3D0000804C;
 					};
 					C4F39C211F35BE3D0000804C = {
 						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Manual;
 						TestTargetID = C4F39BFF1F35BE3D0000804C;
 					};
 				};
@@ -275,6 +283,7 @@
 				C4F39C4A1F35DA7C0000804C /* EventTableViewCell.swift in Sources */,
 				C4F39C061F35BE3D0000804C /* ViewController.swift in Sources */,
 				C4F39C0C1F35BE3D0000804C /* get_stingy.xcdatamodeld in Sources */,
+				C4F39C511F35E6700000804C /* EventAnnotation.swift in Sources */,
 				C4F39C041F35BE3D0000804C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +294,7 @@
 			files = (
 				C4F39C4B1F35DA7C0000804C /* EventTableViewCell.swift in Sources */,
 				C4F39C1C1F35BE3D0000804C /* get_stingyTests.swift in Sources */,
+				C4F39C521F35E6700000804C /* EventAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +304,7 @@
 			files = (
 				C4F39C4C1F35DA7C0000804C /* EventTableViewCell.swift in Sources */,
 				C4F39C271F35BE3D0000804C /* get_stingyUITests.swift in Sources */,
+				C4F39C531F35E6700000804C /* EventAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +371,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -378,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -415,6 +427,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -427,7 +440,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -439,11 +452,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QFVW4UKVAD;
 				INFOPLIST_FILE = get_stingy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nabilaherzegovina.get-stingy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -453,11 +470,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QFVW4UKVAD;
 				INFOPLIST_FILE = get_stingy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nabilaherzegovina.get-stingy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -540,6 +561,7 @@
 				C4F39C2D1F35BE3D0000804C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4F39C2E1F35BE3D0000804C /* Build configuration list for PBXNativeTarget "get_stingyTests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +570,7 @@
 				C4F39C301F35BE3D0000804C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4F39C311F35BE3D0000804C /* Build configuration list for PBXNativeTarget "get_stingyUITests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +579,7 @@
 				C4F39C331F35BE3D0000804C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
