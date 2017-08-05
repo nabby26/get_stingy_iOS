@@ -13,12 +13,19 @@ class ViewController: UIViewController, UITableViewDelegate {
 
 	@IBOutlet weak var eventTable: UITableView!
 	@IBOutlet weak var eventMapView: MKMapView!
+	@IBOutlet weak var scrollView: UIScrollView!
 	
 	let regionRadius: CLLocationDistance = 1000
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+		scrollView.setNeedsLayout()
+		scrollView.layoutIfNeeded()
+		
+		self.automaticallyAdjustsScrollViewInsets = false
+		self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+		
 		eventTable.delegate = self
 		eventTable.dataSource = self
 		
@@ -37,6 +44,16 @@ class ViewController: UIViewController, UITableViewDelegate {
 		nav?.barTintColor = UIColor(red:1.00, green:0.30, blue:0.30, alpha:1.0)
 		nav?.tintColor = UIColor.white
 		nav?.titleTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
+		
+		resizeScrollView()
+	}
+	
+	func resizeScrollView() {
+		let width = scrollView.subviews.last?.frame.origin.y
+		let height = scrollView.subviews.last?.frame.size.height
+		let sizeContent = width! + height!
+		
+		scrollView.contentSize = CGSize(width:scrollView.frame.size.width, height: sizeContent)
 		
 	}
 
@@ -75,7 +92,7 @@ class ViewController: UIViewController, UITableViewDelegate {
 
 extension ViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 7;
+		return 20;
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

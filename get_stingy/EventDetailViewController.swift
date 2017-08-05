@@ -12,11 +12,15 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate, UII
 UINavigationControllerDelegate {
 	@IBOutlet weak var eventMediaCollectionView: UICollectionView!
 	@IBOutlet weak var eventMediaCameraButton: UIBarButtonItem!
+	@IBOutlet weak var scrollView: UIScrollView!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+			
+			self.automaticallyAdjustsScrollViewInsets = false
+			self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
 			
 			eventMediaCollectionView.delegate = self
 			eventMediaCollectionView.dataSource = self
