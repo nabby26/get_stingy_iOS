@@ -24,6 +24,9 @@
 		C4F39C511F35E6700000804C /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F39C501F35E6700000804C /* EventAnnotation.swift */; };
 		C4F39C521F35E6700000804C /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F39C501F35E6700000804C /* EventAnnotation.swift */; };
 		C4F39C531F35E6700000804C /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F39C501F35E6700000804C /* EventAnnotation.swift */; };
+		C4F39C551F35F71C0000804C /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F39C541F35F71C0000804C /* EventDetailViewController.swift */; };
+		C4F39C561F35F71C0000804C /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F39C541F35F71C0000804C /* EventDetailViewController.swift */; };
+		C4F39C571F35F71C0000804C /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F39C541F35F71C0000804C /* EventDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,7 @@
 		C4F39C481F35DA7C0000804C /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		C4F39C491F35DA7C0000804C /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
 		C4F39C501F35E6700000804C /* EventAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
+		C4F39C541F35F71C0000804C /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 				C4F39C481F35DA7C0000804C /* EventTableViewCell.swift */,
 				C4F39C491F35DA7C0000804C /* EventTableViewCell.xib */,
 				C4F39C501F35E6700000804C /* EventAnnotation.swift */,
+				C4F39C541F35F71C0000804C /* EventDetailViewController.swift */,
 			);
 			path = get_stingy;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F39C551F35F71C0000804C /* EventDetailViewController.swift in Sources */,
 				C4F39C4A1F35DA7C0000804C /* EventTableViewCell.swift in Sources */,
 				C4F39C061F35BE3D0000804C /* ViewController.swift in Sources */,
 				C4F39C0C1F35BE3D0000804C /* get_stingy.xcdatamodeld in Sources */,
@@ -294,6 +300,7 @@
 			files = (
 				C4F39C4B1F35DA7C0000804C /* EventTableViewCell.swift in Sources */,
 				C4F39C1C1F35BE3D0000804C /* get_stingyTests.swift in Sources */,
+				C4F39C561F35F71C0000804C /* EventDetailViewController.swift in Sources */,
 				C4F39C521F35E6700000804C /* EventAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +311,7 @@
 			files = (
 				C4F39C4C1F35DA7C0000804C /* EventTableViewCell.swift in Sources */,
 				C4F39C271F35BE3D0000804C /* get_stingyUITests.swift in Sources */,
+				C4F39C571F35F71C0000804C /* EventDetailViewController.swift in Sources */,
 				C4F39C531F35E6700000804C /* EventAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

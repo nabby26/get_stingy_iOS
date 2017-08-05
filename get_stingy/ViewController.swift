@@ -30,6 +30,14 @@ class ViewController: UIViewController, UITableViewDelegate {
 		centerMapOnLocation(location: initialLocation)
 		displayAnnotations()
 		
+		
+		//Modify Nav Bar
+		let nav = self.navigationController?.navigationBar
+		
+		nav?.barTintColor = UIColor(red:1.00, green:0.30, blue:0.30, alpha:1.0)
+		nav?.tintColor = UIColor.white
+		nav?.titleTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
+		
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -57,6 +65,12 @@ class ViewController: UIViewController, UITableViewDelegate {
 		
 	}
 	
+	override func performSegue(withIdentifier identifier: String, sender: Any?) {
+		if identifier == "eventDetailSegue" {
+			
+		}
+	}
+	
 }
 
 extension ViewController: UITableViewDataSource {
@@ -70,6 +84,15 @@ extension ViewController: UITableViewDataSource {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
 		cell.cellTitle.text = "Cell " + String(indexPath.item)
 		return cell
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//		let cell = tableView.cellForRow(at: indexPath)
+		
+		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+		let destination = storyboard.instantiateViewController(withIdentifier: "EventDetailViewController") as! EventDetailViewController
+		self.navigationController?.pushViewController(destination, animated: true)
+		self.performSegue(withIdentifier: "eventDetailSegue", sender: self)
 	}
 	
 	
