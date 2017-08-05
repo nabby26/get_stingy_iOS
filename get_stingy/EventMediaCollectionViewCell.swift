@@ -9,5 +9,6 @@
 import UIKit
 
 class EventMediaCollectionViewCell: UICollectionViewCell {
-    
+	@IBOutlet weak var eventMediaImage: UIImageView!
+	
 }

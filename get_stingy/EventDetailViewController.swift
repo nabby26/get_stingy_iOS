@@ -18,9 +18,12 @@ UINavigationControllerDelegate, CLLocationManagerDelegate {
 	@IBOutlet weak var eventDetailMapView: MKMapView!
 	
 	var locationManager = CLLocationManager()
+	var eventMedia = [UIImage]()
+	let imagePicker = UIImagePickerController()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+			imagePicker.delegate = self
 
         // Do any additional setup after loading the view.
 			
@@ -40,6 +43,11 @@ UINavigationControllerDelegate, CLLocationManagerDelegate {
 			centerMapOnLocation(location: initialLocation)
 			trackUserLocation()
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.eventMediaCollectionView.reloadData()
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -48,15 +56,30 @@ UINavigationControllerDelegate, CLLocationManagerDelegate {
     
 	@IBAction func eventMediaCapture(_ sender: Any) {
 		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-			let imagePicker = UIImagePickerController()
 			imagePicker.delegate = self
 			imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
 			imagePicker.allowsEditing = true
 			self.present(imagePicker, animated: true, completion: nil)
+			
 		}
 	}
 	
 	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+		eventMedia.append(image)
+		eventMediaCollectionView.reloadData()
+		self.dismiss(animated: true, completion: nil);
+		
+	}
+	
+	func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+		self.dismiss(animated: true, completion: nil);
+	}
+	
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+		if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+			eventMedia.append(pickedImage)
+			eventMediaCollectionView.reloadData()
+		}
 		self.dismiss(animated: true, completion: nil);
 	}
 	
@@ -105,13 +128,13 @@ UINavigationControllerDelegate, CLLocationManagerDelegate {
 extension EventDetailViewController: UICollectionViewDataSource {
 	@available(iOS 6.0, *)
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 9;
+		return eventMedia.count;
 	}
 	
 	@available(iOS 6.0, *)
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventMediaCell", for: indexPath) as! EventMediaCollectionViewCell
-		
+		cell.eventMediaImage.image = eventMedia[indexPath.item]
 		return cell;
 	}
 	
