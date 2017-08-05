@@ -8,8 +8,9 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class ViewController: UIViewController, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDelegate {
 
 	@IBOutlet weak var eventTable: UITableView!
 	@IBOutlet weak var eventMapView: MKMapView!
@@ -17,6 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate {
 	@IBOutlet weak var contentView: UIView!
 	
 	let regionRadius: CLLocationDistance = 1000
+	var locationManager = CLLocationManager()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -49,6 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate {
 //		let height = eventTable.contentSize.height + eventMapView.frame.size.height
 //		scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: height)
 //		scrollView.contentSize = contentView.frame.size.height
+		trackUserLocation()
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -76,6 +79,28 @@ class ViewController: UIViewController, UITableViewDelegate {
 		
 	}
 	
+	func trackUserLocation() {
+		eventMapView.showsUserLocation = true
+//		eventMapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
+		locationManager.desiredAccuracy = kCLLocationAccuracyBest
+		locationManager.requestWhenInUseAuthorization()
+		locationManager.delegate = self
+		
+		locationManager.requestWhenInUseAuthorization()
+		if CLLocationManager.locationServicesEnabled() {
+			locationManager.startUpdatingLocation()
+			locationManager.startUpdatingHeading()
+		}
+	}
+	
+ func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+		let location = locations.last as! CLLocation
+		
+		let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+		let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
+		
+		self.eventMapView.setRegion(region, animated: true)
+	}
 	override func performSegue(withIdentifier identifier: String, sender: Any?) {
 		if identifier == "eventDetailSegue" {
 			
@@ -86,7 +111,7 @@ class ViewController: UIViewController, UITableViewDelegate {
 
 extension ViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 20;
+		return 5;
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

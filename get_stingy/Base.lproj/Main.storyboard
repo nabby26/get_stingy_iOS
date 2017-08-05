@@ -266,6 +266,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Get Stingy" id="eLr-o5-bQA"/>
                     <connections>
+                        <outlet property="eventDetailMapView" destination="91v-be-8Hb" id="N1d-8e-WIt"/>
                         <outlet property="eventMediaCameraButton" destination="een-eO-sU5" id="GUm-Dm-7hg"/>
                         <outlet property="eventMediaCollectionView" destination="rOO-P9-kNf" id="XNN-EQ-SGF"/>
                         <outlet property="scrollView" destination="gR0-V2-xoE" id="fdH-7M-cBb"/>

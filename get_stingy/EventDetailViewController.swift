@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class EventDetailViewController: UIViewController, UICollectionViewDelegate, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate {
+UINavigationControllerDelegate, CLLocationManagerDelegate {
 	@IBOutlet weak var eventMediaCollectionView: UICollectionView!
 	@IBOutlet weak var eventMediaCameraButton: UIBarButtonItem!
 	@IBOutlet weak var scrollView: UIScrollView!
+	@IBOutlet weak var eventDetailMapView: MKMapView!
+	
+	var locationManager = CLLocationManager()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +35,10 @@ UINavigationControllerDelegate {
 			
 			nav?.barTintColor = UIColor(red:1.00, green:0.30, blue:0.30, alpha:1.0)
 			nav?.tintColor = UIColor.white
+			
+			let initialLocation = CLLocation(latitude: -37.8136, longitude: 144.9631)
+			centerMapOnLocation(location: initialLocation)
+			trackUserLocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +58,36 @@ UINavigationControllerDelegate {
 	
 	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
 		self.dismiss(animated: true, completion: nil);
+	}
+	
+	func centerMapOnLocation(location: CLLocation) {
+		let regionRadius: CLLocationDistance = 1000
+		let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+		                                                          regionRadius, regionRadius)
+		eventDetailMapView.setRegion(coordinateRegion, animated: true)
+	}
+	
+	func trackUserLocation() {
+		eventDetailMapView.showsUserLocation = true
+		eventDetailMapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
+		locationManager.desiredAccuracy = kCLLocationAccuracyBest
+		locationManager.requestWhenInUseAuthorization()
+		locationManager.delegate = self as? CLLocationManagerDelegate
+		
+		locationManager.requestWhenInUseAuthorization()
+		if CLLocationManager.locationServicesEnabled() {
+			locationManager.startUpdatingLocation()
+			locationManager.startUpdatingHeading()
+		}
+	}
+	
+	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+		let location = locations.last as! CLLocation
+		
+		let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+		let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
+		
+		self.eventDetailMapView.setRegion(region, animated: true)
 	}
 	
     /*
