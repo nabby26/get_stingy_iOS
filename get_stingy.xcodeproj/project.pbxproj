@@ -15,6 +15,12 @@
 		C4F39C111F35BE3D0000804C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4F39C0F1F35BE3D0000804C /* LaunchScreen.storyboard */; };
 		C4F39C1C1F35BE3D0000804C /* get_stingyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F39C1B1F35BE3D0000804C /* get_stingyTests.swift */; };
 		C4F39C271F35BE3D0000804C /* get_stingyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F39C261F35BE3D0000804C /* get_stingyUITests.swift */; };
+		C4F39C4A1F35DA7C0000804C /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F39C481F35DA7C0000804C /* EventTableViewCell.swift */; };
+		C4F39C4B1F35DA7C0000804C /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F39C481F35DA7C0000804C /* EventTableViewCell.swift */; };
+		C4F39C4C1F35DA7C0000804C /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F39C481F35DA7C0000804C /* EventTableViewCell.swift */; };
+		C4F39C4D1F35DA7C0000804C /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F39C491F35DA7C0000804C /* EventTableViewCell.xib */; };
+		C4F39C4E1F35DA7C0000804C /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F39C491F35DA7C0000804C /* EventTableViewCell.xib */; };
+		C4F39C4F1F35DA7C0000804C /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F39C491F35DA7C0000804C /* EventTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,8 @@
 		C4F39C221F35BE3D0000804C /* get_stingyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = get_stingyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4F39C261F35BE3D0000804C /* get_stingyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = get_stingyUITests.swift; sourceTree = "<group>"; };
 		C4F39C281F35BE3D0000804C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4F39C481F35DA7C0000804C /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		C4F39C491F35DA7C0000804C /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,8 @@
 				C4F39C0F1F35BE3D0000804C /* LaunchScreen.storyboard */,
 				C4F39C121F35BE3D0000804C /* Info.plist */,
 				C4F39C0A1F35BE3D0000804C /* get_stingy.xcdatamodeld */,
+				C4F39C481F35DA7C0000804C /* EventTableViewCell.swift */,
+				C4F39C491F35DA7C0000804C /* EventTableViewCell.xib */,
 			);
 			path = get_stingy;
 			sourceTree = "<group>";
@@ -232,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F39C4D1F35DA7C0000804C /* EventTableViewCell.xib in Resources */,
 				C4F39C111F35BE3D0000804C /* LaunchScreen.storyboard in Resources */,
 				C4F39C0E1F35BE3D0000804C /* Assets.xcassets in Resources */,
 				C4F39C091F35BE3D0000804C /* Main.storyboard in Resources */,
@@ -242,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F39C4E1F35DA7C0000804C /* EventTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F39C4F1F35DA7C0000804C /* EventTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F39C4A1F35DA7C0000804C /* EventTableViewCell.swift in Sources */,
 				C4F39C061F35BE3D0000804C /* ViewController.swift in Sources */,
 				C4F39C0C1F35BE3D0000804C /* get_stingy.xcdatamodeld in Sources */,
 				C4F39C041F35BE3D0000804C /* AppDelegate.swift in Sources */,
@@ -269,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F39C4B1F35DA7C0000804C /* EventTableViewCell.swift in Sources */,
 				C4F39C1C1F35BE3D0000804C /* get_stingyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F39C4C1F35DA7C0000804C /* EventTableViewCell.swift in Sources */,
 				C4F39C271F35BE3D0000804C /* get_stingyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,11 +440,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = get_stingy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nabilaherzegovina.get-stingy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -437,11 +454,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = get_stingy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nabilaherzegovina.get-stingy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
