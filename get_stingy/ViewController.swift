@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate {
 	@IBOutlet weak var eventTable: UITableView!
 	@IBOutlet weak var eventMapView: MKMapView!
 	@IBOutlet weak var scrollView: UIScrollView!
+	@IBOutlet weak var contentView: UIView!
 	
 	let regionRadius: CLLocationDistance = 1000
 	
@@ -45,16 +46,9 @@ class ViewController: UIViewController, UITableViewDelegate {
 		nav?.tintColor = UIColor.white
 		nav?.titleTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
 		
-		resizeScrollView()
-	}
-	
-	func resizeScrollView() {
-		let width = scrollView.subviews.last?.frame.origin.y
-		let height = scrollView.subviews.last?.frame.size.height
-		let sizeContent = width! + height!
-		
-		scrollView.contentSize = CGSize(width:scrollView.frame.size.width, height: sizeContent)
-		
+//		let height = eventTable.contentSize.height + eventMapView.frame.size.height
+//		scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: height)
+//		scrollView.contentSize = contentView.frame.size.height
 	}
 
 	override func didReceiveMemoryWarning() {
