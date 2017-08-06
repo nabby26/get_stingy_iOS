@@ -16,6 +16,7 @@ UINavigationControllerDelegate, CLLocationManagerDelegate {
 	@IBOutlet weak var eventMediaCameraButton: UIBarButtonItem!
 	@IBOutlet weak var scrollView: UIScrollView!
 	@IBOutlet weak var eventDetailMapView: MKMapView!
+	@IBOutlet weak var eventSaveButton: UIButton!
 	
 	var locationManager = CLLocationManager()
 	var eventMedia = [UIImage]()
@@ -39,9 +40,19 @@ UINavigationControllerDelegate, CLLocationManagerDelegate {
 			nav?.barTintColor = UIColor(red:1.00, green:0.30, blue:0.30, alpha:1.0)
 			nav?.tintColor = UIColor.white
 			
-			let initialLocation = CLLocation(latitude: -37.8136, longitude: 144.9631)
+			let initialLocation = CLLocation(latitude: -37.8126, longitude: 144.9131)
 			centerMapOnLocation(location: initialLocation)
 			trackUserLocation()
+			
+			let annotation_4 = EventAnnotation(title: "Free Pepsi",
+			                                   subtitle: "Melbourne Central",
+			                                   coordinate: CLLocationCoordinate2D(latitude: -37.8126, longitude: 144.9131))
+			
+			let annotations = [annotation_4]
+			
+			eventDetailMapView.addAnnotations(annotations)
+			
+			eventSaveButton.layer.cornerRadius = CGFloat(eventSaveButton.frame.width / 8)
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -62,6 +73,17 @@ UINavigationControllerDelegate, CLLocationManagerDelegate {
 			self.present(imagePicker, animated: true, completion: nil)
 			
 		}
+	}
+	
+	@IBAction func eventSaveAction(_ sender: Any) {
+		let alertController = UIAlertController(title: "Save Event", message: "Living the frugal live!", preferredStyle: UIAlertControllerStyle.alert)
+		let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+			(result : UIAlertAction) -> Void in
+			print("OK")
+		}
+		alertController.addAction(okAction)
+		self.present(alertController, animated: true, completion: nil)
+		
 	}
 	
 	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
@@ -92,7 +114,7 @@ UINavigationControllerDelegate, CLLocationManagerDelegate {
 	
 	func trackUserLocation() {
 		eventDetailMapView.showsUserLocation = true
-		eventDetailMapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
+//		eventDetailMapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
 		locationManager.desiredAccuracy = kCLLocationAccuracyBest
 		locationManager.requestWhenInUseAuthorization()
 		locationManager.delegate = self as? CLLocationManagerDelegate
@@ -105,12 +127,12 @@ UINavigationControllerDelegate, CLLocationManagerDelegate {
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		let location = locations.last as! CLLocation
-		
-		let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-		let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
-		
-		self.eventDetailMapView.setRegion(region, animated: true)
+//		let location = locations.last as! CLLocation
+//
+//		let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+//		let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
+//
+//		self.eventDetailMapView.setRegion(region, animated: true)
 	}
 	
     /*

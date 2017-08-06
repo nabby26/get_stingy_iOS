@@ -160,10 +160,16 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KY-xz-wQP">
                                                 <rect key="frame" x="303" y="144" width="48" height="57.5"/>
+                                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="48" id="ED1-EX-2b1"/>
                                                 </constraints>
-                                                <state key="normal" title="Fave"/>
+                                                <state key="normal" title="Save">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="eventSaveAction:" destination="mTw-cX-Mo3" eventType="touchUpInside" id="xOK-9a-Dgi"/>
+                                                </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rOO-P9-kNf">
                                                 <rect key="frame" x="0.0" y="401" width="375" height="399"/>
@@ -270,6 +276,7 @@
                         <outlet property="eventDetailMapView" destination="91v-be-8Hb" id="N1d-8e-WIt"/>
                         <outlet property="eventMediaCameraButton" destination="een-eO-sU5" id="GUm-Dm-7hg"/>
                         <outlet property="eventMediaCollectionView" destination="rOO-P9-kNf" id="XNN-EQ-SGF"/>
+                        <outlet property="eventSaveButton" destination="7KY-xz-wQP" id="YKK-zU-F0h"/>
                         <outlet property="scrollView" destination="gR0-V2-xoE" id="fdH-7M-cBb"/>
                     </connections>
                 </viewController>
