@@ -133,7 +133,7 @@
                                                     <constraint firstAttribute="height" constant="128" id="q5z-Rv-az1"/>
                                                 </constraints>
                                             </mapView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mP0-xD-HLY">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mP0-xD-HLY">
                                                 <rect key="frame" x="8" y="144" width="271" height="57.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                 <nil key="textColor"/>
@@ -159,10 +159,11 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KY-xz-wQP">
-                                                <rect key="frame" x="303" y="144" width="48" height="57.5"/>
+                                                <rect key="frame" x="303" y="149" width="48" height="48"/>
                                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="48" id="ED1-EX-2b1"/>
+                                                    <constraint firstAttribute="height" constant="48" id="pHI-M8-wSF"/>
                                                 </constraints>
                                                 <state key="normal" title="Save">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -232,6 +233,7 @@
                                             <constraint firstItem="hwB-Aa-jf0" firstAttribute="leading" secondItem="bsC-MA-pkV" secondAttribute="leading" id="73U-Ep-Qi1"/>
                                             <constraint firstItem="OpY-my-ueP" firstAttribute="leading" secondItem="hwB-Aa-jf0" secondAttribute="leading" id="7XI-Ig-hxo"/>
                                             <constraint firstAttribute="bottom" secondItem="rOO-P9-kNf" secondAttribute="bottom" id="7Zx-J6-syW"/>
+                                            <constraint firstItem="7KY-xz-wQP" firstAttribute="centerY" secondItem="mP0-xD-HLY" secondAttribute="centerY" id="96b-q9-nZt"/>
                                             <constraint firstItem="mP0-xD-HLY" firstAttribute="leading" secondItem="Fde-Kd-xMR" secondAttribute="leading" constant="8" id="C1h-JT-Yfo"/>
                                             <constraint firstItem="hwB-Aa-jf0" firstAttribute="top" secondItem="bsC-MA-pkV" secondAttribute="bottom" constant="8" id="C5z-UD-MnQ"/>
                                             <constraint firstItem="OpY-my-ueP" firstAttribute="trailing" secondItem="hwB-Aa-jf0" secondAttribute="trailing" id="Dso-xA-kU4"/>
@@ -244,12 +246,10 @@
                                             <constraint firstAttribute="trailing" secondItem="6Rk-8I-Nk8" secondAttribute="trailing" id="guD-eK-jfS"/>
                                             <constraint firstItem="91v-be-8Hb" firstAttribute="top" secondItem="Fde-Kd-xMR" secondAttribute="top" id="hHL-6j-QM0"/>
                                             <constraint firstItem="rOO-P9-kNf" firstAttribute="leading" secondItem="Fde-Kd-xMR" secondAttribute="leading" id="hTJ-G1-ZZS"/>
-                                            <constraint firstItem="7KY-xz-wQP" firstAttribute="bottom" secondItem="mP0-xD-HLY" secondAttribute="bottom" id="inJ-QB-cmo"/>
                                             <constraint firstItem="bsC-MA-pkV" firstAttribute="top" secondItem="mP0-xD-HLY" secondAttribute="bottom" constant="8" id="jYV-S2-HtI"/>
                                             <constraint firstAttribute="trailing" secondItem="bsC-MA-pkV" secondAttribute="trailing" constant="8" id="r06-sN-DQB"/>
                                             <constraint firstItem="hwB-Aa-jf0" firstAttribute="trailing" secondItem="bsC-MA-pkV" secondAttribute="trailing" id="vbY-Kv-5zc"/>
                                             <constraint firstAttribute="height" constant="800" id="vvM-Qk-iAl"/>
-                                            <constraint firstItem="7KY-xz-wQP" firstAttribute="top" secondItem="mP0-xD-HLY" secondAttribute="top" id="xy2-MU-cVF"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -273,10 +273,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Get Stingy" id="eLr-o5-bQA"/>
                     <connections>
+                        <outlet property="eventDescription" destination="OpY-my-ueP" id="zxu-im-hRx"/>
                         <outlet property="eventDetailMapView" destination="91v-be-8Hb" id="N1d-8e-WIt"/>
                         <outlet property="eventMediaCameraButton" destination="een-eO-sU5" id="GUm-Dm-7hg"/>
                         <outlet property="eventMediaCollectionView" destination="rOO-P9-kNf" id="XNN-EQ-SGF"/>
                         <outlet property="eventSaveButton" destination="7KY-xz-wQP" id="YKK-zU-F0h"/>
+                        <outlet property="eventSubtitle" destination="bsC-MA-pkV" id="HmW-t0-M4H"/>
+                        <outlet property="eventTime" destination="hwB-Aa-jf0" id="Lgg-QD-xyq"/>
+                        <outlet property="eventTitle" destination="mP0-xD-HLY" id="yNx-SS-vyb"/>
                         <outlet property="scrollView" destination="gR0-V2-xoE" id="fdH-7M-cBb"/>
                     </connections>
                 </viewController>

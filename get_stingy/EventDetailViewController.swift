@@ -18,6 +18,11 @@ UINavigationControllerDelegate, CLLocationManagerDelegate {
 	@IBOutlet weak var eventDetailMapView: MKMapView!
 	@IBOutlet weak var eventSaveButton: UIButton!
 	
+	@IBOutlet weak var eventTitle: UILabel!
+	@IBOutlet weak var eventSubtitle: UILabel!
+	
+	@IBOutlet weak var eventDescription: UILabel!
+	@IBOutlet weak var eventTime: UILabel!
 	var locationManager = CLLocationManager()
 	var eventMedia = [UIImage]()
 	let imagePicker = UIImagePickerController()
@@ -53,6 +58,11 @@ UINavigationControllerDelegate, CLLocationManagerDelegate {
 			eventDetailMapView.addAnnotations(annotations)
 			
 			eventSaveButton.layer.cornerRadius = CGFloat(eventSaveButton.frame.width / 8)
+			
+			eventTime.text = "Tuesday, 7:00PM - 8:00PM"
+			eventTitle.text = "Free Grilled Salmon"
+			eventSubtitle.text = "At Grandpa's Boat"
+			eventDescription.text = "Grandpa has been fishing over the weekend and would like to give back to Port Melbourne community. By Tuesday, he will be grilling over 100 salmons on his boat, starting from 7PM to 8PM. This is a first come first served event, be sure to arrive early before missing out !"
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
