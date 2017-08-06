@@ -212,7 +212,7 @@
                                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <items>
                                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="YIu-tR-7hY"/>
-                                                    <barButtonItem title="Camera" systemItem="camera" id="een-eO-sU5">
+                                                    <barButtonItem title="Live Snap" id="een-eO-sU5">
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <connections>
                                                             <action selector="eventMediaCapture:" destination="mTw-cX-Mo3" id="MHC-0d-k8y"/>
