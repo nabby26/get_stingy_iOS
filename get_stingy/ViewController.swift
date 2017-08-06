@@ -46,7 +46,7 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
 		
 		nav?.barTintColor = UIColor(red:1.00, green:0.30, blue:0.30, alpha:1.0)
 		nav?.tintColor = UIColor.white
-		nav?.titleTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
+        //nav?.titleTextAttributNSAttributedStringKey.foregroundColor.rawValueValue): UIColorwhite!]
 		
 //		let height = eventTable.contentSize.height + eventMapView.frame.size.height
 //		scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: height)
