@@ -20,6 +20,13 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
 	let regionRadius: CLLocationDistance = 1000
 	var locationManager = CLLocationManager()
 	
+	var eventTitles = ["Free Burgers at KFC",
+	                  "Golden Gaytime Giveaway",
+	                  "Ben & Jerry's Birthday",
+	                  "Free Pizza at Criniti",
+	                  "Saussage Sizzle at Bunnings",
+	                  "Popsicle at Sweet Tooth"]
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
@@ -72,8 +79,14 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
 		let annotation_2 = EventAnnotation(title: "DEF",
 		                                   subtitle: "Some Bar",
 		                                   coordinate: CLLocationCoordinate2D(latitude: -37.8194, longitude: 144.9348))
+		let annotation_3 = EventAnnotation(title: "Free Burgers",
+		                                   subtitle: "Mr.Burger",
+		                                   coordinate: CLLocationCoordinate2D(latitude: -37.8335, longitude: 144.9621))
+		let annotation_4 = EventAnnotation(title: "Free Pepsi",
+		                                   subtitle: "Melbourne Central",
+		                                   coordinate: CLLocationCoordinate2D(latitude: -37.8362, longitude: 144.9251))
 		
-		let annotations = [annotation_1,annotation_2]
+		let annotations = [annotation_1,annotation_2,annotation_3,annotation_4]
 		
 		eventMapView.addAnnotations(annotations)
 		
@@ -111,14 +124,14 @@ class ViewController: UIViewController, UITableViewDelegate, CLLocationManagerDe
 
 extension ViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 5;
+		return eventTitles.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let nib = UINib(nibName: "EventTableViewCell", bundle: nil)
 		tableView.register(nib, forCellReuseIdentifier: "eventCell")
 		let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
-		cell.cellTitle.text = "Cell " + String(indexPath.item)
+		cell.cellTitle.text = eventTitles[indexPath.item]
 		return cell
 	}
 	
